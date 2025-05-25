@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Alpine Js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TailwindCSS -->
+    <link href="output.css" rel="stylesheet" />
+    <title>Lam portfolio</title>
+  </head>
+  <body class="bg-cover-0">
+    <!-- Navbar Start -->
+    <nav class="fixed top-0 left-0 right-0 px-4 md:px-6 lg:px-16 py-4 bg-cover-0 z-40" x-data="{ open: false }">
+      <div class="container mx-auto">
+        <!-- Navbars -->
+        <div class="flex justify-between">
+          <a class="text-primary-0 text-3xl font-bold" href="#home">Lam.</a>
+          <ion-icon @click="open = ! open" name="menu-outline" class="text-primary-0 text-3xl font-bold lg:hidden"></ion-icon>
+          <!-- Navbar Desktop -->
+          <div class="hidden lg:block">
+            <ul class="flex gap-5 items-center">
+              <li>
+                <a href="#home" class="text-primary-0 font-semibold text-base hover:text-secondary-0 active:text-secondary-0">Home</a>
+              </li>
+              <li>
+                <a href="#services" class="text-primary-0 font-semibold text-base hover:text-secondary-0 active:text-secondary-0">Services</a>
+              </li>
+              <li>
+                <a href="#project" class="text-primary-0 font-semibold text-base hover:text-secondary-0 active:text-secondary-0">Project</a>
+              </li>
+              <li>
+                <a href="#about" class="text-primary-0 font-semibold text-base hover:text-secondary-0 active:text-secondary-0">About</a>
+              </li>
+              <li>
+                <a href="#contact-lg" class="text-primary-0 font-semibold text-base hover:text-secondary-0 active:text-secondary-0">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden lg:block"></div>
+        </div>
+      </div>
+      <!-- Nav-Mobile -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+        class="lg:hidden fixed bottom-0 left-0 right-0 px-4 md:px-16 bg-white bg-opacity-80 shadow-lg shadow-primary-0 py-4 z-50"
+      >
+        <ul class="flex items-center justify-between">
+          <li class="">
+            <a href="#home" class="flex flex-col items-center text-primary-0 text-base font-normal">
+              <ion-icon name="home-outline" class="text-xl"></ion-icon>
+              Home
+            </a>
+          </li>
+          <li class="">
+            <a href="#services" class="flex flex-col items-center text-primary-0 text-base font-normal">
+              <ion-icon name="sparkles-outline" class="text-xl"></ion-icon>
+              Services
+            </a>
+          </li>
+          <li class="">
+            <a href="#project" class="flex flex-col items-center text-primary-0 text-base font-normal">
+              <ion-icon name="albums-outline" class="text-xl"></ion-icon>
+              Project
+            </a>
+          </li>
+          <li class="">
+            <a href="#about" class="flex flex-col items-center text-primary-0 text-base font-normal">
+              <ion-icon name="person-outline" class="text-xl"></ion-icon>
+              About
+            </a>
+          </li>
+          <li class="">
+            <a href="#contact-mmd" class="flex flex-col items-center text-primary-0 text-base font-normal">
+              <ion-icon name="call-outline" class="text-xl"></ion-icon>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Home Start -->
+    <section id="home" class="lg:relative lg:h-screen lg:overflow-hidden">
+      <div class="container mx-auto px-4 md:px-6 lg:px-16 py-16 md:my-auto mt-10 md:mt-5 lg:mt-32">
+        <div class="grid grid-cols-12 md:items-center">
+          <!-- Text -->
+          <div class="col-span-12 md:col-span-6">
+            <div class="">
+              <p class="text-7xl">👋</p>
+              <h1 class="text-xl md:text-2xl lg:text-4xl text-primary-0 mt-4">
+                <span class="text-2xl lg:text-5xl font-semibold">Hi,</span><br />
+                I'm <span class="font-roboto font-bold">Muhammad Ilham setiwan</span>
+              </h1>
+              <p class="text-lg md:text-xl font-semibold md:mt-3">University Student & Front-End Dev</p>
+              <p class="text-sm mt-5 w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit temporibus quas ratione cum fugit adipisci.</p>
+              <!-- Buttons -->
+              <div class="flex items-center gap-3 md:gap-5 mt-5 md:mt-8">
+                <a
+                  href="#services"
+                  class="flex items-center py-2 px-4 gap-2 shadow-full shadow-primary-0 bg-primary-0 hover:bg-cover-0 transition-colors duration-150 text-white hover:text-primary-0 rounded-xl font-medium text-lg md:text-xl group"
+                >
+                  <ion-icon name="chevron-forward-circle-outline" class="text-2xl md:text-3xl font-bold group-hover:text-primary-0"></ion-icon>
+                  Get Started
+                </a>
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/ilsetiawann"
+                  class="w-10 h-10 flex justify-center items-center shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150"
+                >
+                  <ion-icon name="logo-instagram" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white"></ion-icon>
+                </a>
+                <!-- Tiktok -->
+                <a
+                  href="https://www.tiktok.com/@ilsetiawannn?_t=8qZ8pG0FaLQ&_r=1"
+                  class="w-10 h-10 flex justify-center items-center shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150"
+                >
+                  <ion-icon name="logo-tiktok" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="col-span-12 md:col-span-6">
+            <div class="mt-5">
+              <img src="./images/TRAW-LOGO.png" alt="" class="mx-auto h-80 md:96 w-80 md:w-96" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Home End -->
+
+    <!-- Services Start -->
+    <section id="services" class="lg:h-screen lg:overflow-hidden bg-cover-0">
+      <div class="container mx-auto px-4 md:px-6 lg:px-16 py-10 md:py-16">
+        <div class="grid grid-cols-12">
+          <!-- Text -->
+          <div class="col-span-12">
+            <div>
+              <h1 class="text-primary-0 font-semibold text-3xl md:text-4xl text-center">Services</h1>
+              <p class="text-center text-sm mt-3 md:w-1/2 md:mx-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti cupiditate et optio officia id aliquam obcaecati omnis vero non. Dicta?
+              </p>
+            </div>
+          </div>
+          <!-- Cards Services -->
+          <div class="col-span-12">
+            <ul class="mt-5 md:mt-10 lg:mt-16 flex flex-col md:flex-row gap-6 lg:gap-10">
+              <!-- Card 1 -->
+              <li class="hover:bg-white shadow-full hover:shadow-primary-0 rounded-xl p-5 w-2/3 mx-auto group transition delay-150 duration-300 ease-in-out">
+                <div class="bg-slate-200 border border-slate-300 rounded-xl inline-block p-2 group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out">
+                  <ion-icon name="laptop-outline" class="w-[50px] h-[50px] text-slate-400 group-hover:text-white transition delay-150 duration-300 ease-in-out"></ion-icon>
+                </div>
+                <h1 class="text-base font-bold text-slate-400 group-hover:text-primary-0 transition delay-150 duration-300 ease-in-out mt-4 md:text-2xl">Web Development</h1>
+                <p class="text-xs mt-4 w-2/3 md:text-base text-slate-400 group-hover:text-slate-800 transition delay-150 duration-300 ease-in-out">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, vel.
+                </p>
+                <a
+                  href=""
+                  class="inline-flex items-center mt-4 gap-2 text-sm md:text-base text-slate-400 group-hover:text-white py-1 px-2 rounded-xl group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out"
+                >
+                  More
+                  <ion-icon name="chevron-forward-circle-outline" class="text-lg md:text-xl"></ion-icon>
+                </a>
+              </li>
+              <!-- Card 2 -->
+              <li class="hover:bg-white shadow-full hover:shadow-primary-0 rounded-xl p-5 w-2/3 mx-auto group transition delay-150 duration-300 ease-in-out">
+                <div class="bg-slate-200 border border-slate-300 rounded-xl inline-block p-2 group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out">
+                  <ion-icon name="color-palette-outline" class="w-[50px] h-[50px] text-slate-400 group-hover:text-white transition delay-150 duration-300 ease-in-out"></ion-icon>
+                </div>
+                <h1 class="text-base font-bold text-slate-400 group-hover:text-primary-0 transition delay-150 duration-300 ease-in-out mt-4 md:text-2xl">UI/UX Designer</h1>
+                <p class="text-xs mt-4 w-2/3 md:text-base text-slate-400 group-hover:text-slate-800 transition delay-150 duration-300 ease-in-out">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, vel.
+                </p>
+                <a
+                  href=""
+                  class="inline-flex items-center mt-4 gap-2 text-sm md:text-base text-slate-400 group-hover:text-white py-1 px-2 rounded-xl group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out"
+                >
+                  More
+                  <ion-icon name="chevron-forward-circle-outline" class="text-lg md:text-xl"></ion-icon>
+                </a>
+              </li>
+              <!-- Card 3 -->
+              <li class="hover:bg-white shadow-full hover:shadow-primary-0 rounded-xl p-5 w-2/3 mx-auto group transition delay-150 duration-300 ease-in-out">
+                <div class="bg-slate-200 border border-slate-300 rounded-xl inline-block p-2 group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out">
+                  <ion-icon name="id-card-outline" class="w-[50px] h-[50px] text-slate-400 group-hover:text-white transition delay-150 duration-300 ease-in-out"></ion-icon>
+                </div>
+                <h1 class="text-base font-bold text-slate-400 group-hover:text-primary-0 transition delay-150 duration-300 ease-in-out mt-4 md:text-2xl">Mobile App Development</h1>
+                <p class="text-xs mt-4 w-2/3 md:text-base text-slate-400 group-hover:text-slate-800 transition delay-150 duration-300 ease-in-out">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, vel.
+                </p>
+                <a
+                  href=""
+                  class="inline-flex items-center mt-4 gap-2 text-sm md:text-base text-slate-400 group-hover:text-white py-1 px-2 rounded-xl group-hover:bg-primary-0 transition delay-150 duration-300 ease-in-out"
+                >
+                  More
+                  <ion-icon name="chevron-forward-circle-outline" class="text-lg md:text-xl"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services End -->
+
+    <!-- Projects Start -->
+    <section id="project" class="lg:h-screen lg:overflow-hidden bg-cover-0">
+      <div class="container mx-auto px-4 md:px-6 lg:px-16 py-10 md:py-24">
+        <div class="grid grid-cols-12">
+          <!--  -->
+          <div class="col-span-12 md:col-span-6">
+            <h1 class="text-primary-0 font-semibold text-3xl md:text-4xl text-center md:text-start">Projects</h1>
+            <p class="text-slate-500 text-base font-semibold md:text-xl lg:text-2xl text-center md:text-start mt-3 md:mt-5 lg:mt-8 md:w-2/3">My Creative Works Latest Projects</p>
+            <p class="hidden md:block text-start text-slate-500 text-base md:w-2/3">
+              Lorem ipsum dolor sit amet, consecteturs adipisicing elit. Eligendi eos odio aliquam cumque et?
+            </p>
+            <div class="hidden md:flex justify-center md:justify-start mt-5">
+              <a href="" class="text-center md:text-start text-sm md:text-base lg:text-lg font-bold py-2 px-4 bg-primary-0 text-white rounded-md"> Hire me </a>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-span-12 md:col-span-6">
+            <ul class="flex flex-col mt-8 md:mt-0 gap-8 md:gap-5 md:grid md:grid-cols-12">
+              <li
+                class="flex justify-center items-center md:col-span-6 w-2/3 md:w-full mx-auto rounded-xl shadow-full hover:shadow-primary-0 p-3 h-[100px] md:h-[150px] lg:h-[200px] hover:bg-white group transition delay-150 duration-300 ease-in-out"
+              >
+                <h1 class="text-slate-500 text-base font-bold group-hover:text-primary-0">Coming Soon...</h1>
+              </li>
+              <li
+                class="flex justify-center items-center md:col-span-6 w-2/3 md:w-full mx-auto rounded-xl shadow-full hover:shadow-primary-0 p-3 h-[100px] md:h-[150px] lg:h-[200px] hover:bg-white group transition delay-150 duration-300 ease-in-out"
+              >
+                <h1 class="text-slate-500 text-base font-bold group-hover:text-primary-0">Coming Soon...</h1>
+              </li>
+              <li
+                class="flex justify-center items-center md:col-span-6 w-2/3 md:w-full mx-auto rounded-xl shadow-full hover:shadow-primary-0 p-3 h-[100px] md:h-[150px] lg:h-[200px] hover:bg-white group transition delay-150 duration-300 ease-in-out"
+              >
+                <h1 class="text-slate-500 text-base font-bold group-hover:text-primary-0">Coming Soon...</h1>
+              </li>
+              <li
+                class="flex justify-center items-center md:col-span-6 w-2/3 md:w-full mx-auto rounded-xl shadow-full hover:shadow-primary-0 p-3 h-[100px] md:h-[150px] lg:h-[200px] hover:bg-white group transition delay-150 duration-300 ease-in-out"
+              >
+                <h1 class="text-slate-500 text-base font-bold group-hover:text-primary-0">Coming Soon...</h1>
+              </li>
+            </ul>
+            <div class="flex justify-center mt-5 md:hidden">
+              <a href="https://wa.me/6281242163116" class="text-center font-semibold text-sm py-2 px-4 bg-primary-0 hover:bg-teal-800 text-white rounded-md"> Hire me </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects End -->
+
+    <!-- About Start -->
+    <section id="about" class="lg:h-screen lg:overflow-hidden bg-cover-0">
+      <div class="container mx-auto px-4 md:px-6 lg:px-16 py-10 md:py-16">
+        <div class="grid grid-cols-12">
+          <div class="col-span-12 md:col-span-5">
+            <!-- Mobile -->
+            <h1 class="text-primary-0 font-semibold text-3xl md:text-4xl text-center md:hidden">About me</h1>
+            <p class="text-sm w-2/3 text-center mx-auto my-5 lg:my-3 md:hidden">
+              I am an Informatics student with expertise in web application development, especially in the front-end area. I focus on creating functional and engaging digital
+              solutions, and am always eager to continue learning and growing.
+            </p>
+            <img src="./images/image1.png" alt="" class="w-1/2 md:w-full lg:w-2/3 mx-auto rounded-xl" />
+          </div>
+          <div class="col-span-12 md:col-span-7">
+            <div class="grid grid-cols-12 px-12 mt-6 md:mt-0">
+              <!-- md and lg -->
+              <div class="col-span-12">
+                <h1 class="text-primary-0 font-semibold text-3xl md:text-4xl text-start hidden md:block">About me</h1>
+                <p class="text-xs w-3/4 text-start my-5 hidden md:block">
+                  I am an <span class="font-semibold">Informatics student</span> with expertise in web application development, especially in the front-end area. I focus on
+                  creating functional and engaging digital solutions, and am always eager to continue learning and growing.
+                </p>
+              </div>
+              <!-- grid for table -->
+              <div class="col-span-5 lg:col-span-3 ml-8 md:ml-0">
+                <div>
+                  <p class="text-xs lg:text-sm font-semibold h-10 lg:h-6">Name</p>
+                  <p class="text-xs lg:text-sm font-semibold h-10 lg:h-6">Date of birth</p>
+                  <p class="text-xs lg:text-sm font-semibold h-10 lg:h-6">Address</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="col-span-7 lg:col-span-9">
+                <p class="text-xs lg:text-sm h-10 lg:h-6">: Muhammad Ilham Setiawan</p>
+                <p class="text-xs lg:text-sm h-10 lg:h-6">: September 01, 2003</p>
+                <p class="text-xs lg:text-sm h-10 lg:h-6">: Sleman, D.I. Yogyakarta</p>
+              </div>
+              <!-- About (LG) -->
+              <div id="contact-lg" class="col-span-12 hidden lg:block">
+                <div>
+                  <h1 class="text-primary-0 font-semibold mt-5 text-3xl md:text-4xl text-start lg:text-start">Contact</h1>
+                  <p class="text-xs mt-3 w-1/2">Thanks for visiting! Contact me via email or social media below, I'll respond shortly.</p>
+                  <div class="flex gap-5">
+                    <!-- Instagram -->
+                    <a
+                      href="https://www.instagram.com/ilsetiawann"
+                      class="w-10 h-10 flex justify-center items-center shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150 mt-5"
+                    >
+                      <ion-icon name="logo-instagram" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white"></ion-icon>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a
+                      href="https://wa.me/6281242163116"
+                      class="w-10 h-10 flex justify-center items-center shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150 mt-5"
+                    >
+                      <ion-icon name="logo-whatsapp" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white"></ion-icon>
+                    </a>
+                    <!-- Email -->
+                    <a
+                      href="mailto:email@xyzammad.com"
+                      class="w-10 h-10 flex justify-center items-center shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150 mt-5"
+                    >
+                      <ion-icon name="mail-outline" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About End -->
+
+    <!-- Contact Start (Mobile and Medium) -->
+    <section id="contact-mmd" class="lg:hidden lg:overflow-hidden bg-cover-0">
+      <div class="container mx-auto px-4 md:px-6 lg:px-16 py-5 md:py-10">
+        <!--  -->
+        <div class="grid grid-cols-12">
+          <!--  -->
+          <div class="col-span-12">
+            <h1 class="text-primary-0 font-semibold text-3xl md:text-4xl text-center lg:text-start">Contact</h1>
+            <p class="text-xs md:text-sm text-center w-1/2 md:w-2/3 mx-auto mt-4 md:mt-6 lg:w-full lg:text-start">
+              Thank you for visiting my website! To communicate further, you can contact me via email or social media listed below. I will be happy to respond as quickly as
+              possible.
+            </p>
+          </div>
+          <!--  -->
+          <div class="col-span-12">
+            <div class="max-w-[300px] max-h-[400px] shadow-full shadow-slate-300 mx-auto rounded-xl mt-6 lg:mt-0">
+              <div class="p-8 w-full">
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/ilsetiawann"
+                  class="py-2 bg-cover-0 flex justify-start items-center gap-3 shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150"
+                >
+                  <ion-icon name="logo-instagram" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white w-10 h-10 ml-5"></ion-icon>
+                  Instagram
+                </a>
+                <!-- WhatsApp -->
+                <a
+                  href="https://wa.me/6281242163116"
+                  class="py-2 mt-5 bg-cover-0 flex justify-start items-center gap-3 shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150"
+                >
+                  <ion-icon name="logo-whatsapp" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white w-10 h-10 ml-5"></ion-icon>
+                  WhatsApp
+                </a>
+
+                <!-- Email -->
+                <a
+                  href="mailto:email@xyzammad.com"
+                  class="py-2 mt-5 bg-cover-0 flex justify-start items-center gap-3 shadow-full shadow-primary-0 rounded-full hover:bg-primary-0 group transition-colors duration-150"
+                >
+                  <ion-icon name="mail-outline" class="text-2xl md:text-3xl text-primary-0 font-bold group-hover:text-white w-10 h-10 ml-5"></ion-icon>
+                  Email
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact End -->
+
+    <!-- Ion Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
